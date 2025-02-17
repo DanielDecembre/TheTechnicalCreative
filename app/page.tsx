@@ -21,12 +21,12 @@ const Card: React.FC<CardProps> = ({ title, description, imageSrc, index }) => {
   return (
     <div className="card" id={`card-${index + 1}`}>
       <div className="inner-card">
-        <div className="card-image">
-          <Image src={imageSrc} alt={title} width={200} height={200} />
-        </div>
-        <div className="card-content">
+      <div className="card-content">
           <h2>{title}</h2>
           <p>{description}</p>
+        </div>
+        <div className="card-image">
+          <Image src={imageSrc} alt={title} width={300} height={300} />
         </div>
       </div>
     </div>
@@ -101,11 +101,21 @@ const Home: React.FC = () => {
   return (
     <ReactLenis root>
       <div className="Main-Container" ref={container}>
-        <section className="Hero">
-          <Image src="/Reni.png" alt="Reni" width={100} height={100} />
-        </section>
         <section className="intro">
-          <h1> Hi, I'm Daniel The Technical Creative! </h1>
+          <div className="the"> The </div>
+          <h1 className="intro-title"> Technical Creative. </h1>
+          <div className="about-me"> 
+            <div className="header"> About Me. </div>
+            <div className="about-me-content">
+              <div className="about-me-content-left">
+                <Image src="/images/images-2.png" alt="me" width={300} height={350} />
+              </div>
+              <div className="about-me-content-right">
+                <p>I’m Daniel, a self-taught software engineer, entrepreneur, and aspiring industrial automation specialist. With over two years of experience in frontend and full-stack development, I’ve built and scaled digital products using Next.js, GSAP, and AI-driven automation. I’ve worked with AI startups, developed SaaS platforms, and optimized business processes through technology.</p>
+                <p>Beyond engineering, I have an entrepreneurial background, managing Auntie Mimi’s Limeade and securing high-end product partnerships for my startup. I’m also working toward securing a direct PhD in AI, Finance, or Physics at Georgia Tech, using my AI projects as a foundation.</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="cards">
           {cardData.map((card) => (
